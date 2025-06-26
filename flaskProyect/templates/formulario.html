@@ -8,11 +8,8 @@
 </head>
 
 <body>
-    <h2> Formulario </h2>
-    <a href="/consulta"> Abrir vista Consulta </a>
+    <h2> Regsitro de Albums </h2>
 
-    <br>
-    <br>
     <br>
 
         {% with mensajes= get_flashed_messages()%}
@@ -45,6 +42,32 @@
         <button type="submit"> Guardar Album</button>
 
     </form>
+
+    <br>   
+    
+    <h2 style="color:blueviolet"> Albums Guardados</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <td>Id:</td>
+                <td>Album:</td>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            {%for alb in albums%}
+            <tr>
+                <td>{{ alb.0}}</td>
+                <td> <a href="/detalle/{{alb.0}}"> {{ alb.1}} </a></td>
+            </tr>
+            {%endfor%}
+
+        </tbody>
+
+    </table>
+
 </body>
 
 </html>
