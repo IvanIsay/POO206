@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Consulta </title>
+</head>
+
+<body>
+    <h2 style="color:blueviolet"> ¿Seguro que eliminaras? </h2>
+
+    <form action="/EliminarAlbum/{{ album.0 }} " method="post">
+
+        <input type="text" name="txtTitulo" placeholder="Titulo" value="{{ album.1 }}" disabled >
+
+        <input type="text" name="txtArtista" placeholder="Artista" value="{{ album.2 }}" disabled>
+ 
+        <input type="number" name="txtAnio" placeholder="Año de publicacion"  value="{{ album.3 }}" disabled>
+
+        <button type="submit"> Eliminar Album </button>
+
+    </form>
+
+
+
+     <br>
+     <a href="/"> Regresar al Formulario </a>
+</body>
+
+</html>
